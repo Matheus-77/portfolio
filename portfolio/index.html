@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matheus | Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <a href="#sobre" class="logo">Matheus</a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="idioma">
+      <button onclick="setIdioma('pt')">PT</button>
+      <button onclick="setIdioma('en')">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h1 data-i18n="titulo">Olá, eu sou o Matheus.</h1>
+      <p data-i18n="sobre_texto"></p>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div id="lista-projetos" class="timeline"></div>
+    </section>
+
+    <section id="experiencias">
+      <h2>Experiências</h2>
+      <div id="lista-experiencias" class="timeline"></div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="links">
+        <a href="mailto:SEU_EMAIL"> E-mail</a>
+        <a href="https://wa.me/5533999200333" target="_blank" rel="noopener"> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/matheus-oliveira-6aba6b404/" target="_blank" rel="noopener"> LinkedIn</a>
+        <a href="https://github.com/Matheus-77" target="_blank" rel="noopener"> GitHub</a>
+      </div>
+
+      <form id="form-contato">
+        <label for="nome">Nome</label>
+        <input id="nome" name="name" type="text" minlength="2" required>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="message" rows="5" minlength="5" required></textarea>
+        <button type="submit">Enviar mensagem</button>
+        <p id="status-form" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 Matheus</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
