@@ -1,8 +1,7 @@
-
 const CONFIG = {
-  publicKey: "SUA_PUBLIC_KEY",
-  serviceId: "SEU_SERVICE_ID",
-  templateId: "SEU_TEMPLATE_ID"
+  publicKey: "btx04M6YwpY5YOTFo",
+  serviceId: "service_iz9h25m",
+  templateId: "template_v4bpnch"
 };
 
 const textos = {

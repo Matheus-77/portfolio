@@ -36,15 +36,15 @@ renderLista("lista-experiencias", experiencias, e => `
 
 const form = document.getElementById("form-contato");
 const statusForm = document.getElementById("status-form");
+const btnSubmit = form.querySelector("button[type='submit']");
+
 emailjs.init({ publicKey: CONFIG.publicKey });
 
 form.addEventListener("submit", async (evento) => {
   evento.preventDefault();
-  if (CONFIG.publicKey.startsWith("SUA_")) {
-    statusForm.textContent = "Configure as chaves do EmailJS em js/data.js.";
-    return;
-  }
+  btnSubmit.disabled = true;
   statusForm.textContent = "Enviando...";
+
   try {
     await emailjs.sendForm(CONFIG.serviceId, CONFIG.templateId, form);
     statusForm.textContent = "Mensagem enviada com sucesso!";
@@ -52,5 +52,7 @@ form.addEventListener("submit", async (evento) => {
   } catch (erro) {
     statusForm.textContent = "Não foi possível enviar. Tente novamente.";
     console.error(erro);
+  } finally {
+    btnSubmit.disabled = false;
   }
 });
